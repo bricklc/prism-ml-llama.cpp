@@ -3989,6 +3989,11 @@ class GGMLQuantizationType(IntEnum):
     NVFP4   = 40
     Q1_0_g128 = 41
     Q1_0      = 42
+    TURBO3_0  = 43
+    TURBO4_0  = 44
+    TURBO2_0  = 45
+    TQ3_1S    = 46
+    TQ4_1S    = 47
 
 
 class ExpertGatingFuncType(IntEnum):
@@ -4044,6 +4049,8 @@ class LlamaFileType(IntEnum):
     MOSTLY_NVFP4         = 39  # except 1d tensors
     MOSTLY_Q1_0_g128     = 40  # except 1d tensors
     MOSTLY_Q1_0          = 41  # except 1d tensors
+    MOSTLY_TQ3_1S        = 43  # except 1d tensors
+    MOSTLY_TQ4_1S        = 44  # except 1d tensors
 
     GUESSED              = 1024  # not specified in the model file
 
@@ -4157,6 +4164,8 @@ GGML_QUANT_SIZES: dict[GGMLQuantizationType, tuple[int, int]] = {
     GGMLQuantizationType.NVFP4:     (64, 4 + 32),
     GGMLQuantizationType.Q1_0:      (32, 2 + 4),   # 2 bytes fp16 scale + 4 bytes (32 bits)
     GGMLQuantizationType.Q1_0_g128: (128, 2 + 16),  # 2 bytes fp16 scale + 16 bytes (128 bits)
+    GGMLQuantizationType.TQ3_1S:  (32, 2 + 2 + 12),
+    GGMLQuantizationType.TQ4_1S:  (32, 2 + 2 + 16),
 }
 
 
