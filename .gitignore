@@ -140,6 +140,10 @@ poetry.toml
 /run-spec.sh
 /.ccache/
 
+# Local benchmarking output
+/benchmark_results/
+/playground_results/
+
 # IDE
 /*.code-workspace
 /.windsurf/
